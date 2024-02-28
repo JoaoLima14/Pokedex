@@ -22,13 +22,13 @@ const pokemonData = [
     }
 ];
 
-let currentIndex = 0;
+let I = 0;
 const pokemonNameElement = document.getElementById("pokemon-name");
 const pokemonImgElement = document.getElementById("pokemon-img");
 const pokemonInfoElement = document.getElementById("pokemon-info");
 
-function updatePokemonInfo(index) {
-    const pokemon = pokemonData[index];
+function updatePokemonInfo(AInfo) {
+    const pokemon = pokemonData[AInfo];
     pokemonNameElement.textContent = pokemon.name;
     pokemonImgElement.src = pokemon.img;
     pokemonInfoElement.innerHTML = `
@@ -39,13 +39,13 @@ function updatePokemonInfo(index) {
 }
 
 function prevPokemon() {
-    currentIndex = (currentIndex - 1 + pokemonData.length) % pokemonData.length;
-    updatePokemonInfo(currentIndex);
+    I = (I - 1 + pokemonData.length) % pokemonData.length;
+    updatePokemonInfo(I);
 }
 
 function nextPokemon() {
-    currentIndex = (currentIndex + 1) % pokemonData.length;
-    updatePokemonInfo(currentIndex);
+    I = (I + 1) % pokemonData.length;
+    updatePokemonInfo(I);
 }
 
 
